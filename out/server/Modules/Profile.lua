@@ -1,5 +1,7 @@
 -- Compiled with roblox-ts v2.0.4
 -- Export Functions and Main Class
+local Players = game:GetService("Players")
+local DataStoreService = game:GetService("DataStoreService")
 local Profile
 do
 	Profile = setmetatable({}, {
