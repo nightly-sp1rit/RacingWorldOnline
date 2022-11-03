@@ -1,1 +1,3 @@
 .out/
+out/tsconfig.tsbuildinfo
+out/server/Modules/Profile.lua
