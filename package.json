@@ -1,0 +1,18 @@
+{
+  "name": "racingworldonline",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "rbxtsc",
+    "watch": "rbxtsc -w"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@rbxts/compiler-types": "^2.0.4-types.0",
+    "@rbxts/types": "^1.0.646",
+    "typescript": "^4.8.4"
+  }
+}
