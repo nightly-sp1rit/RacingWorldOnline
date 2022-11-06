@@ -96,6 +96,10 @@ export class Profile implements IProfile {
         this.Player = Player;
     }
 
+    private SendPlaceholderDataClient() {
+        // Todo
+    }
+
     Sync() {
         let DataResult: LuaTuple<[unknown, DataStoreKeyInfo]> | undefined = undefined
         let GarageResult: LuaTuple<[unknown, DataStoreKeyInfo]> | undefined = undefined
@@ -110,17 +114,15 @@ export class Profile implements IProfile {
         });
 
         if (Result[0]) { // if Success
-            if (DataResult === undefined) {
-                // This means there are no values saved for the Player, and the Player is new
+            // If DataResult or the Data retrieved from the GetAsync function is undefined / nil then we presume the player is new and we send Placeholder data in the Event
 
-                return;
-            }
+            if (DataResult !== undefined) {
+                if (DataResult[0] !== undefined) {
+                    const Data = DataResult[0] as Data;
 
-            if (DataResult[0] === undefined) {
-                // Same for the first one
-                
-                return;
-            }
+                    
+                } else { this.SendPlaceholderDataClient(); }
+            } else { this.SendPlaceholderDataClient(); }
         }
 
         if (Result[1]) { // if Error, which is void in Success and unknown in Error

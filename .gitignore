@@ -1,3 +1,7 @@
 .out/
 out/tsconfig.tsbuildinfo
 out/server/Modules/Profile.lua
+out/tsconfig.tsbuildinfo
+out/server/Modules/InternalUtils.lua
+out/server/Modules/PartyInstance.lua
+out/server/Modules/Profile.lua
