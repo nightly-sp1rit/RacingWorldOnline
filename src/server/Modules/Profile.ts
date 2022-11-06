@@ -3,6 +3,7 @@
 import { IProfile } from "./IProfile";
 import { AddMute } from "./Chat";
 import { Settings } from "./Settings";
+import { GiveJoinBadge } from "./Badges";
 
 const Players = game.GetService("Players");
 const DataStoreService = game.GetService("DataStoreService");
@@ -98,6 +99,8 @@ export class Profile implements IProfile {
 
     private SendPlaceholderDataClient() {
         // Todo
+
+        GiveJoinBadge(this.Player);
     }
 
     Sync() {

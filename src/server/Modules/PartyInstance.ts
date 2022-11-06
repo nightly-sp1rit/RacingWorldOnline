@@ -1,4 +1,5 @@
 import { GetPlayerFromString } from "./InternalUtils";
+import { GivePartyBadge } from "./Badges"
 
 type Party = {
     Creator: Player,
@@ -39,6 +40,8 @@ export class PartyInstance {
                         // Player can join the party, we put them inside Players and Update the Party UI for the Player along with Updating Party Info for every client
 
                         Party.Players.push(Player);
+
+                        GivePartyBadge(Player);
 
                         // TODO
                     } else {
