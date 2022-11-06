@@ -13,5 +13,7 @@
 
 **PLEASE NOTE THAT THIS IS A ROBLOX-TS PROJECT AND YOU'LL NEED TO COMPILE IT IN ORDER FOR THE CODE TO WORK**
 
+## ABSOLUTELY DO NOT USE /OUT AS IT'S OUTDATED! YOU NEED TO COMPILE THIS YOURSELF
+
 To install **roblox-ts** check out <a href="https://roblox-ts.com/">the Roblox-ts Official Page</a>
 For any dependencies, a complete list will be added whenever a new dependency is added.
