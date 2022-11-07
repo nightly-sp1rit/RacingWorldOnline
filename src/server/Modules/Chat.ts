@@ -4,7 +4,7 @@ const Muted: PunishmentArrayType[] = [];
 const Cooldowns: PunishmentArrayType[] = [];
 
 const ReplicatedStorage = game.GetService("ReplicatedStorage");
-const ServerClientEvent = ReplicatedStorage.WaitForChild("ServerClientEvent") as RemoteEvent;
+const ServerClientEvent = ReplicatedStorage.WaitForChild("Events").WaitForChild("ServerClientEvent") as RemoteEvent;
 
 const TextService = game.GetService("TextService");
 

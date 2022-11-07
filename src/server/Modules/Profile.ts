@@ -88,7 +88,7 @@ type Customization = {
 // // // // // // // // // // // // //
 
 const ReplicatedStorage = game.GetService("ReplicatedStorage");
-const ServerClientEvent = ReplicatedStorage.WaitForChild("ServerClientEvent") as RemoteEvent;
+const ServerClientEvent = ReplicatedStorage.WaitForChild("Events").WaitForChild("ServerClientEvent") as RemoteEvent;
 
 export class Profile implements IProfile {
     Player: Player;
@@ -98,7 +98,7 @@ export class Profile implements IProfile {
     }
 
     private SendPlaceholderDataClient() {
-        // Todo
+        print("Attempt to give Badge to Player...")
 
         GiveJoinBadge(this.Player);
     }

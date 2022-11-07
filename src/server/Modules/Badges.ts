@@ -19,7 +19,11 @@ export function GivePartyBadge(Player: Player) {
 export function GiveJoinBadge(Player: Player) {
     // Check if Player owns Party Badge already, if not then award the badge
 
+    print("Checking...")
+
     if (!BadgeService.UserHasBadgeAsync(Player.UserId, Badges.Join)) {
+        print("Player has no badge")
+
         BadgeService.AwardBadge(Player.UserId, Badges.Join);
     }
 }
