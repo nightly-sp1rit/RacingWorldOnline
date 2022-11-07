@@ -121,9 +121,27 @@ export class Profile implements IProfile {
 
             if (DataResult !== undefined) {
                 if (DataResult[0] !== undefined) {
-                    const Data = DataResult[0] as Data;
-
+                    // Infer that Data is type Data and Send the Data to client
                     
+                    const Data = DataResult[0] as Data;
+                    const DataToSend = {
+                        Game: {
+                            Cash: Data.Game.Cash,
+                            Exp: Data.Game.Exp,
+                            Joined: Data.Game.Joined,
+                            Level: Data.Game.Level,
+                            Shards: Data.Game.Shards,
+                            Trophies: Data.Game.Trophies
+                        },
+
+                        Profile: {
+                            Signature: Data.Profile.Signature,
+                            Stars: Data.Profile.Stars,
+                            Status: Data.Profile.Status
+                        }
+                    }
+
+                    ServerClientEvent.FireClient(this.Player, "JoinDataSent", DataToSend);
                 } else { this.SendPlaceholderDataClient(); }
             } else { this.SendPlaceholderDataClient(); }
         }

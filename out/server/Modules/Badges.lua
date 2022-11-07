@@ -15,7 +15,9 @@ local function GivePartyBadge(Player)
 end
 local function GiveJoinBadge(Player)
 	-- Check if Player owns Party Badge already, if not then award the badge
+	print("Checking...")
 	if not BadgeService:UserHasBadgeAsync(Player.UserId, Badges.Join) then
+		print("Player has no badge")
 		BadgeService:AwardBadge(Player.UserId, Badges.Join)
 	end
 end

@@ -12,7 +12,7 @@ local GarageDB = DataStoreService:GetDataStore(Settings.GarageDS)
 -- Define Typedefs for different Data
 -- // // // // // // // // // // // //
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
-local ServerClientEvent = ReplicatedStorage:WaitForChild("ServerClientEvent")
+local ServerClientEvent = ReplicatedStorage:WaitForChild("Events"):WaitForChild("ServerClientEvent")
 local Profile
 do
 	Profile = setmetatable({}, {
@@ -29,7 +29,7 @@ do
 		self.Player = Player
 	end
 	function Profile:SendPlaceholderDataClient()
-		-- Todo
+		print("Attempt to give Badge to Player...")
 		GiveJoinBadge(self.Player)
 	end
 	function Profile:Sync()
@@ -47,7 +47,24 @@ do
 			-- If DataResult or the Data retrieved from the GetAsync function is undefined / nil then we presume the player is new and we send Placeholder data in the Event
 			if DataResult ~= nil then
 				if DataResult[1] ~= nil then
+					-- Infer that Data is type Data and Send the Data to client
 					local Data = DataResult[1]
+					local DataToSend = {
+						Game = {
+							Cash = Data.Game.Cash,
+							Exp = Data.Game.Exp,
+							Joined = Data.Game.Joined,
+							Level = Data.Game.Level,
+							Shards = Data.Game.Shards,
+							Trophies = Data.Game.Trophies,
+						},
+						Profile = {
+							Signature = Data.Profile.Signature,
+							Stars = Data.Profile.Stars,
+							Status = Data.Profile.Status,
+						},
+					}
+					ServerClientEvent:FireClient(self.Player, "JoinDataSent", DataToSend)
 				else
 					self:SendPlaceholderDataClient()
 				end
