@@ -1,11 +1,8 @@
-<div align="center">
-  <h1>Racing World: Online</h1>
+<h1>Racing World: Online</h1>
   
-  This is an Open Repository designed to let others use the code from **Racing World: Online** however they want in your code. Please note that this does not include
-  the full codebase (ex. Externals, Backend) and most comments are in Italian
+  This is an Open Repository designed to let others use the code from **Racing World: Online** however they want in your code. Please note you may need to create instances and set up things for your setup.
   
   Enjoy Coding!
-</div>
 
 <img src="https://cdn3.emoji.gg/emojis/8584-typescript.png" style="width: 35px; margin: 0px !important">
 
