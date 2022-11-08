@@ -31,3 +31,9 @@ export function TimeToString(Second: number): string {
         return Second + "?";
     }
 }
+
+export function GetDStrFromTimestamp(Timestamp: number) {
+    return ""
+
+    // TODO
+}

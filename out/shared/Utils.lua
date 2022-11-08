@@ -27,8 +27,13 @@ local function TimeToString(Second)
 		return tostring(Second) .. "?"
 	end
 end
+local function GetDStrFromTimestamp(Timestamp)
+	return ""
+	-- TODO
+end
 return {
 	DecimalToFirstPoint = DecimalToFirstPoint,
 	NumberToString = NumberToString,
 	TimeToString = TimeToString,
+	GetDStrFromTimestamp = GetDStrFromTimestamp,
 }

@@ -4,6 +4,7 @@ import { IProfile } from "./IProfile";
 import { AddMute } from "./Chat";
 import { Settings } from "./Settings";
 import { GiveJoinBadge } from "./Badges";
+import { GetDStrFromTimestamp } from "shared/Utils";
 
 const Players = game.GetService("Players");
 const DataStoreService = game.GetService("DataStoreService");
@@ -151,6 +152,28 @@ export class Profile implements IProfile {
 
             } else {
                 print("❗ Player " + this.Player.DisplayName + "has no saved Garage");
+            }
+
+            if (PunishmentResult !== undefined && PunishmentResult[0] !== undefined) {
+                // We have BanData and MuteData
+
+                const PunishmentRes: Punishment = PunishmentResult as Punishment;
+
+                if (PunishmentRes.Ban.IsBanned) {
+                    if (os.time() - PunishmentRes.Ban.BannedTill <= 0) {
+                        // if the difference between the current timestamp and the ban end timestamp is 0 (10 - 10) or is lower than 0 (15 - 10) then we unban the player
+
+                        // TODO UNBAN
+                    } else {
+                        if (PunishmentRes.Ban.Reason) {
+                            this.Player.Kick(Settings.BanMessageReason.format(GetDStrFromTimestamp(PunishmentRes.Ban.BannedTill), PunishmentRes.Ban.Reason));
+                        } else {
+                            this.Player.Kick(Settings.BanMessageReason.format(GetDStrFromTimestamp(PunishmentRes.Ban.BannedTill)));
+                        }
+                    }
+                }
+            } else {
+                print("❗ Player " + this.Player.DisplayName + "has no saved Punishments");
             }
         }
 
