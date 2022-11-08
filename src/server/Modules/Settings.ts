@@ -8,5 +8,10 @@ export const Settings = {
 
     // Chat Settings
 
-    ChatCMDPrefix: "/"
+    ChatCMDPrefix: "/",
+
+    // Profile Settings
+
+    MinAccountAge: 14,
+    AccountAgeRestrictedMsg: "Your account needs to be >14 Days old in order to play the game"
 }
