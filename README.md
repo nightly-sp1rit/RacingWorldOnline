@@ -1,10 +1,10 @@
 <h1>Racing World: Online</h1>
   
-  This is an Open Repository designed to let others use the code from **Racing World: Online** however they want in your code. Please note you may need to create instances and set up things for your setup.
-  
-  Enjoy Coding!
+This is an Open Repository designed to let others use the code from **Racing World: Online** however they want in your code. Please note you may need to create instances and set up things for your setup.
 
-<img src="https://cdn3.emoji.gg/emojis/8584-typescript.png" style="width: 35px; margin: 0px !important">
+![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
+![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
+![Lua](https://img.shields.io/badge/lua-%232C2D72.svg?style=for-the-badge&logo=lua&logoColor=white)
 
 # How to Use
 
