@@ -20,6 +20,14 @@ export function NumberToString(Number: number): string {
     }
 }
 
-export function TimeToString(Second: number) {
-
+export function TimeToString(Second: number): string {
+    if (Second < 60) {
+        return Second + "s";
+    } else if (Second > 59 && Second < 86400) {
+        return math.floor(Second / 60) + "m";
+    } else if (Second > 86399) {
+        return math.floor(Second / 86400) + "h";
+    } else {
+        return Second + "?";
+    }
 }

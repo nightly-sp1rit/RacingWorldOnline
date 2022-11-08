@@ -17,6 +17,15 @@ local function NumberToString(Number)
 	end
 end
 local function TimeToString(Second)
+	if Second < 60 then
+		return tostring(Second) .. "s"
+	elseif Second > 59 and Second < 86400 then
+		return tostring(math.floor(Second / 60)) .. "m"
+	elseif Second > 86399 then
+		return tostring(math.floor(Second / 86400)) .. "h"
+	else
+		return tostring(Second) .. "?"
+	end
 end
 return {
 	DecimalToFirstPoint = DecimalToFirstPoint,
