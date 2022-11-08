@@ -141,6 +141,8 @@ export class Profile implements IProfile {
                         }
                     }
 
+                    // Add Garage
+
                     ServerClientEvent.FireClient(this.Player, "JoinDataSent", DataToSend);
                 } else { this.SendPlaceholderDataClient(); }
             } else { this.SendPlaceholderDataClient(); }
