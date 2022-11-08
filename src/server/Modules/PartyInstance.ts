@@ -15,6 +15,14 @@ const Settings = {
     FixedPartySize: 5
 }
 
+// Sync Functions
+
+export function GetActiveParties() {
+    // TODO
+
+    return "TODO";
+}
+
 export class PartyInstance {
     public CreateParty(Creator: Player) {
         const NewParty: Party = {
