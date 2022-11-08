@@ -1,3 +1,5 @@
+import { Settings } from "./Settings";
+
 type PunishmentArrayType = [ Player, number ];
 
 const Muted: PunishmentArrayType[] = [];
@@ -48,6 +50,27 @@ function IsPlayerCooldowned(Player: Player): boolean {
     return false;
 }
 
+function InternalHandleCommand(Player: Player, Message: string): number {
+    if (Message.sub(0, 1) === Settings.ChatCMDPrefix) {
+        const Args: string[] = string.split(Message.sub(2, Message.size()), " ");
+
+        // Args is an array of strings containing all strings separated by spaces (exclude prefix)
+
+        if (!Args[0]) { return 1; }
+
+        switch(Args[0]) {
+            case "ping":
+                print("Pong");
+                
+                break;
+        }
+
+        return 0;
+    } else {
+        return 1;
+    }
+}
+
 export function HandleChatRequest(Player: Player, Message: string) {
     if (!IsPlayerMuted(Player) && !IsPlayerCooldowned(Player)) {
         // Check if Message is valid to send in chat
@@ -65,6 +88,10 @@ export function HandleChatRequest(Player: Player, Message: string) {
             
             // Add the rest of the Object elements.
         });
+
+        // Execute Commands
+
+        InternalHandleCommand(Player, Message);
     } else {
         Player.Kick("You're not allowed to exploit!");
 
