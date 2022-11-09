@@ -160,8 +160,8 @@ export class Profile implements IProfile {
                 const PunishmentRes: Punishment = PunishmentResult as Punishment;
 
                 if (PunishmentRes.Ban.IsBanned) {
-                    if (os.time() - PunishmentRes.Ban.BannedTill <= 0) {
-                        // if the difference between the current timestamp and the ban end timestamp is 0 (10 - 10) or is lower than 0 (15 - 10) then we unban the player
+                    if (PunishmentRes.Ban.BannedTill - os.time() <= 0) {
+                        // if the difference between the current timestamp and the ban end timestamp is 0 (10 - 10) or is lower than 0 (10 - 15) then we unban the player
 
                         // TODO UNBAN
                     } else {
